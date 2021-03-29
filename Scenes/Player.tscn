@@ -1,0 +1,73 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Assets/Img/hero/hero-idle/hero-idle-1.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Img/hero/hero-run/hero-run-5.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Img/hero/hero-run/hero-run-4.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Img/hero/hero-run/hero-run-1.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Img/hero/hero-jump/hero-jump-3.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Img/hero/hero-attack/hero-attack-2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Img/hero/hero-attack/hero-attack-3.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Img/hero/hero-run/hero-run-2.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Img/hero/hero-idle/hero-idle-4.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Img/hero/hero-idle/hero-idle-2.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Img/hero/hero-attack/hero-attack-5.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Img/hero/hero-run/hero-run-3.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Img/hero/hero-idle/hero-idle-3.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Img/hero/hero-run/hero-run-6.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Img/hero/hero-attack/hero-attack-4.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Img/hero/hero-attack/hero-attack-1.png" type="Texture" id=20]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 7.92064
+height = 17.694
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 11 ), ExtResource( 15 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 19 ), ExtResource( 14 ) ],
+"loop": false,
+"name": "Attack",
+"speed": 8.5
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 8.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 6.25983, 7.17851 )
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 2.51984, 4.40972 )
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 4.76221, -28.5732 )
+current = true
+zoom = Vector2( 0.3, 0.3 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "Idle"
+
+[node name="AttackArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2( 39.3333, 3.56762 )
+shape = SubResource( 3 )
+disabled = true
+[connection signal="animation_finished" from="Sprite" to="." method="_on_Sprite_animation_finished"]

@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Tilesets/Main.tres" type="TileSet" id=1]
+[ext_resource path="res://Assets/Img/Environment/background.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Tilesets/Graveyard.tres" type="TileSet" id=3]
+[ext_resource path="res://Assets/Img/Environment/mountains.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=6]
+
+[node name="Main" type="Node"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 517.918, 300.339 )
+scale = Vector2( 2.71026, 2.77581 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 93.3381, 466.69 )
+texture = ExtResource( 4 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 280.216, 466.69 )
+texture = ExtResource( 4 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 469.204, 469.21 )
+texture = ExtResource( 4 )
+
+[node name="Sprite5" type="Sprite" parent="."]
+position = Vector2( 658.192, 464.171 )
+texture = ExtResource( 4 )
+
+[node name="Sprite6" type="Sprite" parent="."]
+position = Vector2( 849.7, 459.131 )
+texture = ExtResource( 4 )
+
+[node name="TileMap2" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+format = 1
+tile_data = PoolIntArray( 524288, 0, 0, 524294, 0, 0, 524300, 0, 0 )
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 14.3699, 91.3137 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 1376267, 0, 0, 1376271, 0, 0, 1376272, 0, 0, 1376273, 0, 0, 1376274, 0, 0, 1376275, 0, 0, 1376276, 0, 0, 1376277, 0, 0, 1441817, 3, 0, 1638429, 0, 0, 1638433, 0, 0, 1638437, 0, 0, 1638441, 0, 0, 1769497, 1, 0, 1769499, 2, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 157.797, 533.484 )
+
+[node name="Enemy" parent="." instance=ExtResource( 6 )]
+position = Vector2( 605.404, 476.737 )

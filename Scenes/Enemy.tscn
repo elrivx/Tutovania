@@ -1,0 +1,40 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/Img/Enemies/Skeleton/skeleton-2.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Img/Enemies/Skeleton/skeleton-6.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Img/Enemies/Skeleton/skeleton-5.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Img/Enemies/Skeleton/skeleton-3.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Img/Enemies/Skeleton/skeleton-4.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Img/Enemies/Skeleton/skeleton-1.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Img/Enemies/Skeleton/skeleton-8.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Img/Enemies/Skeleton/skeleton-7.png" type="Texture" id=8]
+[ext_resource path="res://Scripts/Enemy.gd" type="Script" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.5
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 8 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 10.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 7.25
+height = 17.5
+
+[node name="Enemy" type="KinematicBody2D"]
+script = ExtResource( 9 )
+
+[node name="EnemySprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "Idle"
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.25, 5.25 )
+shape = SubResource( 2 )
