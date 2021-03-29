@@ -16,12 +16,12 @@ In this repository you will see my attempt to make a Metroidvania like game with
 
 Se han usado para su realización:
 
-- Godot 3.2.3 Estable
+- Godot 3.2.3 Estable (GDScript)
 - Gothicvania Cementary Asstes de anzimuiz https://ansimuz.itch.io/gothicvania-cemetery
 
 I'm use:
 
-- Godot 3.2.3 Stable Version
+- Godot 3.2.3 Stable Version (GDScript)
 - Gothicvania Cementary Asstes by anzimuiz https://ansimuz.itch.io/gothicvania-cemetery
 
 
