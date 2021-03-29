@@ -19,7 +19,7 @@ Se han usado para su realización:
 - Godot 3.2.3 Estable
 - Gothicvania Cementary Asstes de anzimuiz https://ansimuz.itch.io/gothicvania-cemetery
 
-I'm only use:
+I'm use:
 
 - Godot 3.2.3 Stable Version
 - Gothicvania Cementary Asstes by anzimuiz https://ansimuz.itch.io/gothicvania-cemetery
